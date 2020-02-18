@@ -1,4 +1,4 @@
-# final-project-anti-2019-ncov
+# Final-project-anti-2019-ncov
 
 ## Jared Li
 
