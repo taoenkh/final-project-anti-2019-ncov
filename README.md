@@ -2,7 +2,7 @@
 
 
  null | Tasks Done | Tasks In Progress | Issues
----------- | ------------------ | ----------------
+-------|---------- | ------------------ | ----------------
 Jared Li | a  | b | c
 Jiaqi Liu | a | b
 Lihang Pan | Completed Peer-to-Peer Transaction | b | c
