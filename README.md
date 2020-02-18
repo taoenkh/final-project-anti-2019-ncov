@@ -3,15 +3,15 @@
 
  Tasks Done | Tasks In Progress | Issues
 ---------- | ------------------ | -----------------
-Jared Li | |
+Jared Li | a  | b
 
-Jiaqi Liu |  |
+Jiaqi Liu | a | b
 
-Lihang Pan | Completed Peer-to-Peer Transaction |
+Lihang Pan | Completed Peer-to-Peer Transaction | b
 
-Shidi Yu | |
+Shidi Yu | a | b
 
-Tao Wang |  |
+Tao Wang | a | b
 
 
 
