@@ -1,7 +1,7 @@
 # Final-project-anti-2019-ncov
 
 
- | Tasks Done | Tasks In Progress | Issues
+ Members | Tasks Done | Tasks In Progress | Issues
 -------|---------- | ------------------ | ----------------
 Jared Li | a  | b | c
 Jiaqi Liu | a | b
