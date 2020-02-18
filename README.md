@@ -1,19 +1,26 @@
 # Final-project-anti-2019-ncov
 
-## Jared Li
+
+ Tasks Done | Tasks In Progress | Issues
+---------- | ------------------ | -----------------
+Jared Li | |
+
+Jiaqi Liu |  |
+
+Lihang Pan | Completed Peer-to-Peer Transaction |
+
+Shidi Yu | |
+
+Tao Wang |  |
 
 
-## Jiaqi Liu
 
 
-## Lihang Pan
-
-* Complete Peer-to-Peer Transaction
-
-## Shidi Yu
 
 
-## Tao Wang
+
+
+
 
 
 
