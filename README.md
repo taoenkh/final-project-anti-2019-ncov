@@ -3,7 +3,7 @@
 # Meeting 2
  Members | Tasks Done | Tasks In Progress | Issues
 -------|---------- | ------------------ | ----------------
-Jared Li | a  | b | c
+Jared Li | Created and finished Block class  | Improve Block class to adapt Quarkchain | 
 Jiaqi Liu | Finished blockchain class as `index.js` | Modify index class to adapt specification of Quarkchain
 Lihang Pan | Completed Peer-to-Peer Transaction |  | c
 Shidi Yu | a | b | c
