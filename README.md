@@ -4,7 +4,7 @@
  Members | Tasks Done | Tasks In Progress | Issues
 -------|---------- | ------------------ | ----------------
 Jared Li | a  | b | c
-Jiaqi Liu | a | b
+Jiaqi Liu | Finished blockchain class as `index.js` | modify index class to adapt specification of Quarkchain
 Lihang Pan | Completed Peer-to-Peer Transaction |  | c
 Shidi Yu | a | b | c
 Tao Wang | Created Trello, readme, and contributed to Peer-to-Peer Transaction part | Update next weeks progress and understand `QuarkChain` | None
