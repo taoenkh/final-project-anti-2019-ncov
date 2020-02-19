@@ -6,7 +6,7 @@
 Jared Li | Created and finished Block class  | Improve Block class to adapt Quarkchain | 
 Jiaqi Liu | Finished blockchain class as `index.js` | Modify index class to adapt specification of Quarkchain
 Lihang Pan | Completed Peer-to-Peer Transaction |  | c
-Shidi Yu | a | b | c
+Shidi Yu | Unit test for block and blockchain class | test POW, wallet transaction, transaction pool and mine transaction | 
 Tao Wang | Created Trello, readme, and contributed to Peer-to-Peer Transaction part | Update next weeks progress and understand `QuarkChain` | None
 
 
