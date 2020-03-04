@@ -1,14 +1,23 @@
 const Block = require('./block');
+const {SHARDNUM} = require('../config');
+const Shard = require('./Shard');
 
 class Blockchain{
+
+
     constructor(){
-        this.chain = [Block.genesis()];
+        this.totalblock = 0;
+        this.chain = [];
+        for (let i = 0; i < SHARDNUM; i++) {
+            const shard = new Shard(i);
+            this.chain.push(shard);
+        }
 
     }
-    addBlock(data){
-        const block  =Block.mineBlock(this.chain[this.chain.length-1],data);
-        this.chain.push(block);
 
+    addBlock(data){
+
+        const block = this.chain[this.totalblock++ % SHARDNUM].addBlock(data);
         return block;
 
     }
