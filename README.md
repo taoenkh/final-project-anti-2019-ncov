@@ -1,4 +1,67 @@
 # Final-project-anti-2019-ncov
+# Getting Started
+Our project utilizes `Node.js` and `Express.js` Framework for the Back-end server
+## Prerequisites
+To run the project, please make sure `Nodejs` and `npm` are installed.
+The dependencies are all stored in `node-modules` and `package.json`
+## Running single instance
+
+`npm run dev`
+The command above will start a server at port 5001 for the p2p network and port 3001 for the http network.
+## Running multiple instances
+Running multiple instances requires specifying the peers in the network.
+
+To run the second node, we need to specify the HTTP port and p2p ports
+For example, node 2 uses port 3002 as HTTP port, and 5002 as p2p port
+`HTTP_PORT=3002 P2P_PORT=5002 PEERS=ws://localhost:5001 npm run dev`
+To build more nodes, the p2p port of other nodes in the network must be specified.
+
+# APIs
+
+Our project supports `mining`, requesting `transactions`, getting `public-key`of the instance, viewing the transactions in `transaction` pool, and viewing the blockchain info.
+
+## Mining
+`GET` request on 
+`ip_address:port/mine-transactions`
+where `ip_address:port` is the instance about the mine a block
+
+## Requesting transactions
+
+`POST` request
+The body of the `POST` request must be in `application/json` format
+the `json` has the following format
+`{"public-key":"{public key of the node you are sending coins to}",
+    "amount":{the amount of coins you are sending}} `
+`ip_address:port/transact`
+
+where `ip_address:port` is the address of the sender
+
+## Getting the public key
+
+`GET` request
+`ip_address:port/public-key`
+
+The response will return the public-key of the instance with address `ip_address:port`, in a json format.
+
+`{"public-key":{the public key of the instance}}`
+
+## Viewing the transactions
+
+This API will return the transactions in the transaction pool in json format.
+
+`ip_address:port/transactions` 
+
+
+The response will be in json format the.
+
+## Viewing the Blockchain
+
+`ip_address:port/blocks`
+
+The front-end UI was built using ReactJS, it is included all the API's listed above.
+
+
+
 
 # Meeting 2
  Members | Tasks Done | Tasks In Progress | Issues
