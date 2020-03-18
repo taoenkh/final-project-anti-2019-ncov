@@ -32,8 +32,8 @@ The body of the `POST` request must be in `application/json` format
 the `JSON` must be in the following format  
 ```json
 {
-    "public-key":"{public key of the node you are sending coins to}",
-    "amount":{the amount of coins you are sending}
+    "public-key":" { public key of the node you are sending coins to} ",
+    "amount":"{ the amount of coins you are sending }"
  }
  ```  
 `ip_address:port/transact`  
@@ -49,7 +49,7 @@ The response will return the public-key of the instance with address `ip_address
 
 ```json
 {
-    "public-key":{the public key of the instance}
+    "public-key":"{the public key of the instance}"
 }
 ```
 
@@ -67,8 +67,19 @@ The response will be in `JSON` format.
 `ip_address:port/blocks`
 
 The response will be the entire blockchain in `JSON` format.
-
+## Front-end App
 The front-end UI was built using ReactJS, it is included all the API's listed above.
+ To visit our front-end page, visiting `ip_address:port` on a browser will direct to the web page of node that certain node.   
+ Mining, requesting transactions, viewing transaction pool, and viewing the blockchain are all supported in this front-end webpage.  
+ Requesting transaction on `localhost:3001` is equivalent to `localhost:3001/transac`  
+ 
+ 
+ ## Running the evaluation
+ 
+ After installing the docker in local machine, running `docker-compose up -d` under the home directory will build 10 docker containers 
+ to run the evaluation (1 client and 9 servers).
+ 
+ 
 
 
 
