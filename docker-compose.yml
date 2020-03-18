@@ -1,0 +1,67 @@
+version: '3'
+
+services:
+   s1:
+      image: taoenkh/test:latest
+      container_name: s1
+      volumes :
+            - ./davis-chain:/home/davis-chain
+      restart: always
+      
+   s2:
+      image: taoenkh/test:latest
+      container_name: s2
+      volumes :
+            - ./davis-chain:/home/davis-chain
+      restart: always
+
+   s3:
+      image: taoenkh/test:latest
+      container_name: s3
+      volumes :
+            - ./davis-chain:/home/davis-chain
+      restart: always
+   s4:
+      image: taoenkh/test:latest
+      container_name: s4
+      volumes :
+            - ./davis-chain:/home/davis-chain
+      restart: always
+   s5:
+      image: taoenkh/test:latest
+      container_name: s5
+      volumes :
+            - ./davis-chain:/home/davis-chain
+      restart: always
+   s6:
+      image: taoenkh/test:latest
+      container_name: s6
+      volumes :
+            - ./davis-chain:/home/davis-chain
+      restart: always
+   s7:
+      image: taoenkh/test:latest
+      container_name: s7
+      volumes :
+            - ./davis-chain:/home/davis-chain
+      restart: always
+   s8:
+      image: taoenkh/test:latest
+      container_name: s8
+      volumes :
+            - ./davis-chain:/home/davis-chain
+      restart: always
+   s9:
+      image: taoenkh/test:latest
+      container_name: s8
+      volumes :
+            - ./davis-chain:/home/davis-chain
+      restart: always
+   c1:
+      image: taoenkh/test:latest
+      container_name: c1
+      volumes: 
+            - ./davis-chain:/home/davis-chain
+      restart: always
+
+
