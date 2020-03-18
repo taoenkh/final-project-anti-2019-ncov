@@ -53,7 +53,7 @@ services:
       restart: always
    s9:
       image: taoenkh/test:latest
-      container_name: s8
+      container_name: s9
       volumes :
             - ./davis-chain:/home/davis-chain
       restart: always
