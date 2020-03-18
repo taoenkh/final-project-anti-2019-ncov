@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import Block from './Block';
 
 class Blocks extends Component {
     //state = {shard: []};
     state = {blocks: []};
 
     componentDidMount(){
-        fetch('http://localhost:3001/blocks')
+        fetch(`${document.location.origin}/blocks`)
         .then(response=> response.json())
         .then(json=>this.setState({blocks: json}));
 
@@ -14,6 +16,7 @@ class Blocks extends Component {
         console.log('this.state', this.state);
         return(
             <div>
+                <div><Link to='/'>Home</Link></div>
                 <h3>Blocks</h3> 
                 {
                    
@@ -28,7 +31,7 @@ class Blocks extends Component {
                                             return(
                                                 <div>
                                                     <div className="hangchain"></div>
-                                                    <div key={shard.hash} className = 'Block'>{shard.hash}</div>
+                                                    <Block key={shard.hash} block ={shard}/>
                                                     
                                                 </div>
                                             )

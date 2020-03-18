@@ -3,18 +3,17 @@ const Block = require('./block');
 class Shard{
 
     constructor(shardnum){
-
-
-        this.shard = [Block.genesis(shardnum)]
+        this.length = 1;
         this.shardnum = shardnum;
+        this.shard = [Block.genesis(shardnum)]
     }
 
     addBlock(data){
 
-        const block = Block.mineBlock(this.shard[this.shard.length-1],data, this.shardnum);
+        const block = Block.mineBlock(this.shard[this.shard.length-1],data,this.shardnum, this.counter);
 
         this.shard.push(block);
-
+        this.length++;
         return block;
 
     }

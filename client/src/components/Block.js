@@ -1,8 +1,109 @@
 import React, {Component} from 'react';
+import {Button} from 'react-bootstrap';
 
 class Block extends Component{
+    state ={displayTransaction: false};
+
+    toggleTransaction=()=>{
+        this.setState({displayTransaction: !this.state.displayTransaction});
+    }
+
+    get displayTransaction(){
+        const {data}=this.props.block;
+
+        const stringifiedData=JSON.stringify(data);
+
+        console.log(data);
+
+        //const { input, outputs } = data;
+	    //const recipients = Object.keys(outputMap);
+
+        const dataDisplay = stringifiedData.length >35?
+         `${stringifiedData.substring(0,15)}...`:
+        stringifiedData;
+        
+        /*<div>From: {`${input.address.substring(0,20)}...`} | Balance: {input.amount}</div>
+        {
+            outputs.map(output => (
+                <div key={output.address}>
+                    To: {`${output.address.substring(0,20)}...`} | Sent: {output.amount}
+                </div>
+            ))
+        }*/
+
+        if(this.state.displayTransaction){
+            return (
+                <div>
+                    {
+                        data.map(dataum =>{
+                            return(
+                                <div>
+                                   
+                                    {
+                                        dataum.outputs.map(output=>{
+                                            if (output.address != dataum.input.address)
+                                                return(
+                                                    <div key={output.address}>To: {`${output.address.substring(0,20)}...`} | Sent: {output.amount} </div>
+                                                )
+                                            else
+                                                return(
+                                                    <div> From: {`${output.address.substring(0,20)}...`} | Balance: {output.amount}</div>
+                                                )
+                                        })
+                                    }
+                                    
+                                </div>
+                            )
+                        })
+                    }
+    
+                        
+                            
+                    <br />
+                    <Button
+                        bsStyle="danger"
+                        bsSize="small"
+                        onClick={this.toggleTransaction}
+                    >
+                        Show Less
+                    </Button>
+
+                </div>
+            )
+        }
+
+        return (
+            <div>
+                <div>Data: {dataDisplay}</div>
+                <Button
+                    bsStyle="danger"
+                    bsSize="small"
+                    onClick={this.toggleTransaction}
+                >
+                    Show More
+                </Button>
+            </div>
+        );
+    }
     render(){
-        const { timestamp, hash,data}=this.props.block;
+        
+        const { timestamp, hash}=this.props.block;
+
+        const hashDisplay = `${hash.substring(0,15)}`;
+    
+
+        return(
+            <div className ='Block'>
+                <div>Hash:{hashDisplay}</div>
+                <div>Timestamp: {new Date(timestamp).toLocaleString()}</div>
+                
+                {this.displayTransaction}
+
+                
+
+            </div>
+        );
+
         
 
     }

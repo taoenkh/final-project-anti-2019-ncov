@@ -1,13 +1,13 @@
 const Block = require('./block');
 const {SHARDNUM} = require('../config');
 const Shard = require('./Shard');
-
 class Blockchain{
 
 
-    constructor(){
+    constructor(shard){
         this.totalblock = 0;
         this.chain = [];
+        this.shard = shard%SHARDNUM;
         for (let i = 0; i < SHARDNUM; i++) {
             const shard = new Shard(i);
             this.chain.push(shard);
@@ -17,19 +17,24 @@ class Blockchain{
 
     addBlock(data){
 
-        const block = this.chain[this.totalblock++ % SHARDNUM].addBlock(data);
+        const block = this.chain[this.shard % SHARDNUM].addBlock(data);
         return block;
 
     }
     isValidChain(chain){
-        if(JSON.stringify(chain[0])!== JSON.stringify(Block.genesis())) return false;
+        if(JSON.stringify(chain[this.shard].shard[0])!== JSON.stringify(Block.genesis(this.shard))) {
+            //console.log("genesis not valid");
+            //console.log(chain[this.shard].shard[0],Block.genesis(this.shard));
+            return false;
+        }
 
-        for(let i=1; i<chain.length; i++)
+        for(let i=1; i<chain[this.shard].shard.length; i++)
         {
-            const block = chain[i];
-            const lastBlock = chain[i-1];
+            const block = chain[this.shard].shard[i];
+            const lastBlock = chain[this.shard].shard[i-1];
             if(block.lastHash !== lastBlock.hash || block.hash !== Block.blockHash(block)){
-                    return false;
+                //console.log("inside forloop not valid");
+                return false;
 
             }
 
@@ -37,11 +42,12 @@ class Blockchain{
         return true;
     }
     replaceChain(newChain){
-        if(newChain.length<= this.chain.length){
-        console.log('Recieved chain is not longer than the current chain');
-        return;
+        console.log(newChain,this.shard,"newc");
+        if(newChain[this.shard].length<= this.chain[this.shard].length){
+            console.log('Recieved chain is not longer than the current chain');
+            return;
         } else if(!this.isValidChain(newChain)){
-            console.log('the received chian is not valid.');
+            console.log('the received chain is not valid.');
             return;
         }
         console.log('Replacing blockchain with the new chain');
