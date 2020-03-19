@@ -1,6 +1,64 @@
 # Final-project-anti-2019-ncov
 # Getting Started
 Our project utilizes `Node.js` and `Express.js` Framework for the Back-end server
+# Project structure
+```
+├── README.md
+├── app (The main backend application including p2p server)
+│   ├── index.js
+│   ├── miner.js
+│   └── p2p-server.js
+├── blockchain (The data structure of blockchain, and validation of blocks)
+│   ├── Shard.js
+│   ├── block.js
+│   ├── block.test.js
+│   ├── index.js
+│   └── index.test.js
+├── chain-util.js
+├── client (The front-end application)
+│   ├── dist
+│   └── src
+│       ├── assets
+│       ├── components
+│       │   ├── App.js
+│       │   ├── Block.js
+│       │   ├── Blocks.js
+│       │   ├── ConductTransaction.js
+│       │   └── TransactionPool.js
+│       ├── history.js
+│       ├── index.css
+│       ├── index.html
+│       └── index.js
+├── cmd.txt
+├── config.js (Configuration file of back-end server)
+├── createcommand.py
+├── davis-chain.zip
+├── dev-test.js
+├── docker-compose.yml
+├── dump.rdb
+├── ip.txt
+├── package-lock.json
+├── package.json
+├── request.py
+├── result.txt
+├── wallet (Data structure and logic of transactions)
+│   ├── index.js 
+│   ├── index.test.js
+│   ├── transaction-pool.js
+│   ├── transaction-pool.test.js
+│   ├── transaction.js
+│   └── transaction.test.js
+```
+The project is built using `node.js`, with numerous dependencies.
+
+For testing purpose, a suggested way of running the project is directly unzipping the `davis-chain.zip`.  
+It will provide a `node-module` with all the dependencies installed.
+## Configurations
+
+Inside `config.js` the `SHARDNUM`, `DIFFICULTY`, `MINING_REWARD` are all parameters that can be modified.  
+
+
+
 ## Prerequisites
 To run the project, please make sure `Nodejs` and `npm` are installed.
 The dependencies are all stored in `node-modules` and `package.json`
@@ -78,6 +136,36 @@ The front-end UI was built using ReactJS, it is included all the API's listed ab
  
  After installing the docker in local machine, running `docker-compose up -d` under the home directory will build 10 docker containers 
  to run the evaluation (1 client and 9 servers).
+ 
+ After running the instances run `docker ps -aq | xargs -n 1 docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' > ip.txt` to store the IP addresses of 10 containers.  
+ 
+ Then reorder the IP addresses based on the order of `docker ps`.
+ The order of the IP addresses must be 
+ ```
+ s1
+ s2
+ s3
+ s4
+ s5
+ s6
+ s7
+ s8
+ s9
+ c1
+ ```
+ 
+ running `python createcommand.py` to generate a `cmd.txt` file with the command of running the p2p server.
+ ## Running instances of Docker
+ 
+ Open 10 terminals and run `docker exec -it {container name} bash`
+ 
+ In the client container run   
+ `apt-get install python3`  
+ `apt-get install python3-pip`
+ `pip install requests` to install the libraries require to run the script.
+ 
+ `python3 request.py` will run the evaluation.
+ 
  
  
 
