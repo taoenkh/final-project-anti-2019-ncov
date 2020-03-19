@@ -129,7 +129,7 @@ The response will be the entire blockchain in `JSON` format.
 The front-end UI was built using ReactJS, it is included all the API's listed above.
  To visit our front-end page, visiting `ip_address:port` on a browser will direct to the web page of node that certain node.   
  Mining, requesting transactions, viewing transaction pool, and viewing the blockchain are all supported in this front-end webpage.  
- Requesting transaction on `localhost:3001` is equivalent to `localhost:3001/transac`  
+ Requesting transaction on `localhost:3001` is equivalent to `localhost:3001/transact`, or you can just click on the links we already provided on the page.
  
  
  ## Running the evaluation
