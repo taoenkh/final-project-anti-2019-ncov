@@ -197,7 +197,7 @@ Tao Wang | UpdatedTrello, readme, and contributed to `config.js`, `chain-utils.j
 -------|---------- | ------------------ | ----------------
 Jared Li | Improved and finished Block.test and index.test class in blockchain folder https://github.com/ECS-251-W2020/final-project-anti-2019-ncov/commit/3ffd34f32f3095b3e24d214bdbbb44a13902c6ca  | Add functions to fit sharding | None
 Jiaqi Liu | Updated `index.js` `miner.js` `p2p-server.js` https://github.com/ECS-251-W2020/final-project-anti-2019-ncov/commit/103abd3d3a1775f11e198d64dacd57f0b7677766  | Adjusting blockchain accordingly to the change of the new shard class | None
-Lihang Pan |make the final demo and finish the final project ppt| help with the evaluation https://github.com/ECS-251-W2020/final-project-anti-2019-ncov/commit/0065fee5e0085ef826240a2a8b8535188b4feb82| None
+Lihang Pan |make the final demo and finish the final project ppt https://github.com/ECS-251-W2020/final-project-anti-2019-ncov/commit/0065fee5e0085ef826240a2a8b8535188b4feb82| help with the evaluation| None
 Shidi Yu | Unit test for block and blockchain. Wallet transaction, transaction pool and mine transaction class https://github.com/ECS-251-W2020/final-project-anti-2019-ncov/commit/7e375b436628024326ff6946ed8c13d2fcb60da0  | Implement frontend of the bitcoin system | None
 Tao Wang | Updated Trello, readme, and contributed to python script performing making transactions and mining https://github.com/ECS-251-W2020/final-project-anti-2019-ncov.git | Writing a bash script to run multiple p2p serveres | None
 
